@@ -88,6 +88,8 @@ MonoBehaviour:
   m_LabelTable:
     m_LabelNames:
     - default
+    - Player Config
+    - App Config
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: fc6e64a78bd6c004c80fd108e6155e1e, type: 2}

@@ -20,17 +20,20 @@ MonoBehaviour:
   - m_GUID: f6ae29b08b7363c4184745603fa84868
     m_Address: Price_10
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - App Config
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6e6dc8b7210c826419d7339e2966e365
     m_Address: Price_20
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - App Config
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c24cfa3073f3e5943b23f633bebe7d8d
     m_Address: Price_50
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - App Config
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 369eaa8a3481f1e418b72fec59e5ceca, type: 2}

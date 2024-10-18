@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: FastPlayerConfig
   m_EditorClassIdentifier: 
   Hp: 22.7
-  Speed: 7.53
+  Speed: 10
   Attack: 0.26

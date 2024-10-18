@@ -223,5 +223,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1f05342e70e77a4491a3d548119f3be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 10
-  textMesh: {fileID: 3580143378649224045}
+  text: {fileID: 3580143378649224045}

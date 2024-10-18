@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SlowPlayerConfig
   m_EditorClassIdentifier: 
   Hp: 16
-  Speed: 1.87
+  Speed: 5.73
   Attack: 0.2

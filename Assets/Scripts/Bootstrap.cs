@@ -1,45 +1,36 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class Bootstrap : MonoBehaviour
 {
+    [SerializeField] private ConfigsProvider _configsProvider;
+    
     [Header("Player")] 
     [SerializeField] private PlayerSummoner _playerSummoner;
     [SerializeField] private Player _player;
-    [SerializeField] private AssetReference PlayerConfig;
     
     [Header("AppView")]
     [SerializeField] private List<InAppPackageView> _inAppPackageViews;
-    [SerializeField] private AssetReference AppConfig;
 
-    private void Start()
+    private void Awake()
     {
-        var playerConfigHandle = PlayerConfig.LoadAssetAsync<PlayerConfig>();
-        playerConfigHandle.Completed += OnPlayerConfigLoaded;
-        
-        var appConfigHandle= AppConfig.LoadAssetAsync<InAppPackageConfig>();
-        appConfigHandle.Completed += OnAppConfigLoaded;
+        _configsProvider.OnConfigsLoaded += OnConfigsLoaded;
     }
 
-    private void OnPlayerConfigLoaded(AsyncOperationHandle<PlayerConfig> handle)
+    private void OnDisable()
     {
-        if (handle.Status == AsyncOperationStatus.Succeeded)
-        {
-            _player.Initialize(handle.Result);
-            _playerSummoner.SetConfig(handle.Result);
-        }
+        _configsProvider.OnConfigsLoaded -= OnConfigsLoaded;
     }
-    
-    private void OnAppConfigLoaded(AsyncOperationHandle<InAppPackageConfig> handle)
+
+    private void OnConfigsLoaded()
     {
-        if (handle.Status == AsyncOperationStatus.Succeeded)
+        _player.Initialize(_configsProvider.GetRandomPlayerConfig());
+        _playerSummoner.SetConfig(_configsProvider.GetRandomPlayerConfig());
+
+        for (int i = 0; i < _inAppPackageViews.Count; i++)
         {
-            for (int i = 0; i < _inAppPackageViews.Count; i++)
-            {
-                _inAppPackageViews[i].Initialize(handle.Result);
-            }
+            _inAppPackageViews[i].Initialize(_configsProvider.GetRandomAppConfig());
         }
     }
 }
