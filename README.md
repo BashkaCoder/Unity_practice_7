@@ -13,7 +13,7 @@
 Этот скрипт отвечает за создание новых экземпляров игрока с конфигом `PlayerConfig`. На нажатие клавиши **X** создается новый игрок с уже загруженной конфигурацией.
 
 ### [ConfigsProvider.cs](https://github.com/BashkaCoder/Unity_practice_7/blob/Label/Assets/Scripts/ConfigsProvider.cs)
-Скрипт загружает конфиги по лейблам (`Player Config` и `App Config`) с использованием Addressables и сохраняет их в словарь. Позволяет другим объектам получать случайный конфиг, избегая прямой работы с Addressables.
+Скрипт загружает конфиги по лейблам (`Player Config` и `App Config`) с использованием Addressables и сохраняет их в словарь. Позволяет другим клиентам получать случайный конфиг, избегая прямой работы с Addressables.
 
 ### [Bootstrap.cs](https://github.com/BashkaCoder/Unity_practice_7/blob/Label/Assets/Scripts/Bootstrap.cs)
 Занимается инициализацией всех объектов сцены с помощью загруженных конфигов. В момент загрузки конфигов передает их в `Player`, `PlayerSummoner` и `InAppPackageView`.
