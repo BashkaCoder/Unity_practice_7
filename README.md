@@ -1,2 +1,2 @@
-# Unity_practice_7
-Unity Addressables
+# Addressables 🚀
+Practice dedicated to learn more about Addressables in Unity.
