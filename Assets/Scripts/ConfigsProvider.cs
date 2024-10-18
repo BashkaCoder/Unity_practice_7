@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
+
 public class ConfigsProvider : MonoBehaviour
 {
     private readonly Dictionary<string, List<ScriptableObject>> _configs = new();
